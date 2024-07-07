@@ -5,17 +5,17 @@
 // will compile your contracts, add the Hardhat Runtime Environment's members to the
 // global scope, and execute the script.
 const hre = require("hardhat");
-const tokenContractJSON = require("../artifacts/contracts/MetaToken.sol/MetaToken.json");
+const tokenContractJSON = require("../artifacts/contracts/Alien.sol/Alien.json");
 
-const tokenAddress = ""; // place your erc20 contract address here
+const tokenAddress = "0x7cDD1599D72391B3056146ea8805055ae44a6FD6"; 
 const tokenABI = tokenContractJSON.abi;
-const walletAddress = ""; // place your public address for your wallet here
+const walletAddress = "your wallet address"; 
 
 async function main() {
 
     const token = await hre.ethers.getContractAt(tokenABI, tokenAddress);
 
-    console.log("You now have: " + await token.balanceOf(walletAddress) + " tokens");
+    console.log("Alien NFTs balance: " + await token.balanceOf(walletAddress) + "fxAH");
   }
   
   // We recommend this pattern to be able to use async/await everywhere
